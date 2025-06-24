@@ -579,7 +579,7 @@ function App() {
             
             <div className="text-warm-bronze-600 text-center md:text-right">
               <p className="mb-1 sm:mb-2 text-sm sm:text-base">© 2025 Fit With Beth. All rights reserved.</p>
-              <p className="text-xs sm:text-sm">Transform Powerfully. Built by Dreams Flo</p>
+              <p className="text-xs sm:text-sm">Transform Powerfully. Built by DreamsFlo</p>
             </div>
           </div>
         </div>
