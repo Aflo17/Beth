@@ -422,9 +422,7 @@ function App() {
                 <ul className="space-y-2 sm:space-y-3">
                   {[
                     "Complete fitness evaluation",
-                    "Goal-setting consultation",
-                    "Custom program preview",
-                    "Nutrition strategy session"
+                    "Goal-setting consultation"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center">
                       <TrendingUp size={14} className="text-rose-gold-500 mr-2 sm:mr-3 flex-shrink-0 sm:w-4 sm:h-4" />
