@@ -210,12 +210,6 @@ function App() {
                 features: ["Custom Workout Plans", "Nutrition Guidance", "24/7 Support", "Progress Tracking"]
               },
               {
-                icon: <Users size={32} className="sm:w-12 sm:h-12" />,
-                title: "GROUP TRAINING",
-                description: "High-energy group sessions that build community while crushing fitness goals together.",
-                features: ["Small Group Focus", "Team Motivation", "Varied Workouts", "Cost Effective"]
-              },
-              {
                 icon: <Monitor size={32} className="sm:w-12 sm:h-12" />,
                 title: "ONLINE PROGRAMMING",
                 description: "World-class training programs delivered digitally with video guidance and support.",
