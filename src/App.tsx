@@ -394,7 +394,7 @@ function App() {
               <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
                 <div className="flex items-center">
                   <Mail className="text-rose-gold-500 mr-3 sm:mr-4 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg text-warm-bronze-700">beth@fitwithbeth.com</span>
+                  <span className="text-base sm:text-lg text-warm-bronze-700">fitwithbeth2@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="text-rose-gold-500 mr-3 sm:mr-4 flex-shrink-0" size={20} />
