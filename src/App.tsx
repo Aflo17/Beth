@@ -409,11 +409,11 @@ function App() {
                 </div>
                 <div className="flex items-center">
                   <Phone className="text-rose-gold-500 mr-3 sm:mr-4 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg text-warm-bronze-700">(555) 123-4567</span>
+                  <span className="text-base sm:text-lg text-warm-bronze-700">(646) 463-0893</span>
                 </div>
                 <div className="flex items-center">
                   <Instagram className="text-rose-gold-500 mr-3 sm:mr-4 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg text-warm-bronze-700">@fitwithbeth</span>
+                  <span className="text-base sm:text-lg text-warm-bronze-700">@bethybaby213</span>
                 </div>
               </div>
 
