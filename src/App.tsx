@@ -285,8 +285,7 @@ function App() {
               <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
                 {[
                   { number: "10+", label: "Years Training" },
-                  { number: "500+", label: "Transformations" },
-                  { number: "15", label: "Certifications" }
+                  { number: "100+", label: "Transformations" }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-2xl sm:text-4xl font-black text-rose-gold-500 mb-1 sm:mb-2">{stat.number}</div>
