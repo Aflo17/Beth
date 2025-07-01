@@ -230,7 +230,7 @@ function App() {
             ].map((program, index) => (
               <div 
                 key={index}
-                className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl p-6 sm:p-8 hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300"
+                className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl p-6 sm:p-8 hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300 flex flex-col h-full"
               >
                 <div className="text-rose-gold-500 mb-4 sm:mb-6 group-hover:text-rose-gold-600 transition-colors duration-300">
                   {program.icon}
@@ -244,7 +244,7 @@ function App() {
                   {program.description}
                 </p>
 
-                <ul className="space-y-2 mb-6 sm:mb-8">
+                <ul className="space-y-2 mb-6 sm:mb-8 flex-grow">
                   {program.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-xs sm:text-sm text-warm-bronze-700">
                       <div className="w-2 h-2 bg-rose-gold-500 rounded-full mr-3 flex-shrink-0"></div>
@@ -255,7 +255,7 @@ function App() {
 
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="w-full bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                  className="w-full bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base mt-auto"
                 >
                   Get Started
                 </button>
@@ -282,7 +282,7 @@ function App() {
                 Every client receives a personalized roadmap designed to break through plateaus and exceed expectations. This isn't just about fitness—it's about building unbreakable mental fortitude and lifelong habits that define success.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-12">
                 {[
                   { number: "10+", label: "Years Training" },
                   { number: "100+", label: "Transformations" }
@@ -295,7 +295,7 @@ function App() {
               </div>
 
               <div className="flex flex-wrap gap-2 sm:gap-4">
-                {["NCSF-CPT",     "NPC NYS GP 2024 WW Overall Champion"].map((cert, index) => (
+                {["NCSF-CPT", "NPC NYS GP 2024 WW Overall Champion"].map((cert, index) => (
                   <span key={index} className="bg-rose-gold-100 text-rose-gold-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border border-rose-gold-200">
                     {cert}
                   </span>
@@ -577,7 +577,7 @@ function App() {
             
             <div className="text-warm-bronze-600 text-center md:text-right">
               <p className="mb-1 sm:mb-2 text-sm sm:text-base">© 2025 Fit With Beth. All rights reserved.</p>
-              <p className="text-xs sm:text-sm">Transform Powerfully. Built by DreamsFlo</p>
+              <p className="text-xs sm:text-sm">Transform Powerfully. Built by Dreams Flo</p>
             </div>
           </div>
         </div>
