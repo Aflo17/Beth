@@ -165,8 +165,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions about this project, please contact:
 - Email: beth@fitwithbeth.com
-- Phone: (555) 123-4567
-- Instagram: @fitwithbeth
+- Phone: (646) 463-0893
+- Instagram: @bethybaby213
 
 ---
 
