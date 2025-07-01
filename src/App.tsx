@@ -201,7 +201,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center justify-items-center max-w-5xl mx-auto">
             {[
               {
                 icon: <Target size={32} className="sm:w-12 sm:h-12" />,
@@ -224,7 +224,7 @@ function App() {
             ].map((program, index) => (
               <div 
                 key={index}
-                className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl p-6 sm:p-8 hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300 flex flex-col h-full"
+                className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl p-6 sm:p-8 hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300 flex flex-col h-full w-full max-w-sm"
               >
                 <div className="text-rose-gold-500 mb-4 sm:mb-6 group-hover:text-rose-gold-600 transition-colors duration-300">
                   {program.icon}
