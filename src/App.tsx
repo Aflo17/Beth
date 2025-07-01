@@ -282,23 +282,23 @@ function App() {
                 Every client receives a personalized roadmap designed to break through plateaus and exceed expectations. This isn't just about fitness, it's about building unbreakable mental fortitude and lifelong habits that define success.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-12">
+              <div className="grid grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-12">
                 {[
                   { number: "10+", label: "Years Training" },
                   { number: "100+", label: "Transformations" }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-2xl sm:text-4xl font-black text-rose-gold-500 mb-1 sm:mb-2">{stat.number}</div>
-                    <div className="text-warm-bronze-600 font-medium text-xs sm:text-base">{stat.label}</div>
+                    <div className="text-3xl sm:text-5xl font-black text-rose-gold-500 mb-2">{stat.number}</div>
+                    <div className="text-warm-bronze-600 font-medium text-sm sm:text-base">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-2 sm:gap-4">
+              <div className="space-y-3 sm:space-y-4">
                 {["NCSF-CPT", "NPC NYS GP 2024 WW Overall Champion"].map((cert, index) => (
-                  <span key={index} className="bg-rose-gold-100 text-rose-gold-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border border-rose-gold-200">
+                  <div key={index} className="bg-rose-gold-100 text-rose-gold-700 px-4 py-3 sm:px-6 sm:py-4 rounded-xl text-sm sm:text-base font-semibold border border-rose-gold-200 text-center shadow-sm">
                     {cert}
-                  </span>
+                  </div>
                 ))}
               </div>
             </div>
