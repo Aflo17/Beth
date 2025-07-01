@@ -503,6 +503,7 @@ function App() {
                     <option value="strength">Strength Training</option>
                     <option value="endurance">Endurance</option>
                     <option value="general">General Fitness</option>
+                    <option value="Maintenance">Maintenance</option>
                   </select>
                 </div>
 
