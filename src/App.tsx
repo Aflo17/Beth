@@ -284,20 +284,15 @@ function App() {
 
               <div className="grid grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-12">
                 {[
-                  { number: "10+", label: "Years Training" },
-                  { number: "100+", label: "Transformations" }
+                  { number: "10+", label: "Years Training", cert: "NCSF-CPT" },
+                  { number: "100+", label: "Transformations", cert: "NPC NYS GP 2024 WW Overall Champion" }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-3xl sm:text-5xl font-black text-rose-gold-500 mb-2">{stat.number}</div>
-                    <div className="text-warm-bronze-600 font-medium text-sm sm:text-base">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                {["NCSF-CPT", "NPC NYS GP 2024 WW Overall Champion"].map((cert, index) => (
-                  <div key={index} className="bg-rose-gold-100 text-rose-gold-700 px-4 py-3 sm:px-6 sm:py-4 rounded-xl text-sm sm:text-base font-semibold border border-rose-gold-200 text-center shadow-sm">
-                    {cert}
+                    <div className="text-warm-bronze-600 font-medium text-sm sm:text-base mb-3">{stat.label}</div>
+                    <div className="bg-rose-gold-100 text-rose-gold-700 px-3 py-2 sm:px-4 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold border border-rose-gold-200 shadow-sm">
+                      {stat.cert}
+                    </div>
                   </div>
                 ))}
               </div>
