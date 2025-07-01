@@ -296,7 +296,7 @@ function App() {
               </div>
 
               <div className="flex flex-wrap gap-2 sm:gap-4">
-                {["NCSF-CPT", "NPC NEW YORK STATE GRAND PRIX 2024 Overall Women's Wellness Champion"].map((cert, index) => (
+                {["NCSF-CPT", "NPC NY STATE GRAND PRIX 2024 Overall Women's Wellness Champion"].map((cert, index) => (
                   <span key={index} className="bg-rose-gold-100 text-rose-gold-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border border-rose-gold-200">
                     {cert}
                   </span>
