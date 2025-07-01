@@ -279,7 +279,7 @@ function App() {
               </p>
 
               <p className="text-base sm:text-lg text-warm-bronze-600 mb-8 sm:mb-12 leading-relaxed">
-                Every client receives a personalized roadmap designed to break through plateaus and exceed expectations. This isn't just about fitness—it's about building unbreakable mental fortitude and lifelong habits that define success.
+                Every client receives a personalized roadmap designed to break through plateaus and exceed expectations. This isn't just about fitness, it's about building unbreakable mental fortitude and lifelong habits that define success.
               </p>
 
               <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-12">
