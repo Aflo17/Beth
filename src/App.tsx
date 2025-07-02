@@ -335,7 +335,7 @@ function App() {
                 quote: "Beth has been working with my daughter Eve, who has Down Syndrome for more than three years now. She is kind, patient, and awesome! I can see an overall improvement in Eve's energy level and body definition. Beth is an absolute treasure!!"
               },
               {
-                name: "Carmen L. MD",
+                name: "Carmen L., MD",
                 result: "6 Years of Strength: A Doctor’s Praise for Beth’s Transformative Training",
                 quote: "I've had the pleasure of training with Beth for six years, and they've been my best years in terms of fitness, energy, and overall well-being. Beth is deeply committed, knowledgeable, and versatile--offering everything from kickboxing and HIIT to yoga, cardio, and strength training. Her passion and personalized approach make every session both effective and enjoyable."
               }
