@@ -12,12 +12,15 @@ import {
   Instagram,
   Award,
   Target,
-  TrendingUp
+  TrendingUp,
+  ArrowLeft,
+  X
 } from 'lucide-react';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -29,6 +32,25 @@ function App() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+
+  // All existing reviews data
+  const allReviews = [
+    {
+      name: "Constance B.",
+      result: "7 Years Strong: Personalized Workouts That Keep Me Moving at 76",
+      quote: "I've been using Beth for 7 years.  I'm 76 years old and have rheumatoid arthritis.  My workouts with her keep me limber.  She adjusts them depending on how I'm feeling.  On top of that she has a lovely personality that makes the sessions enjoyable.  When I'm away, I continue the workouts through FaceTime."
+    },
+    {
+      name: "Carmen L., MD",
+      result: "6 Years of Strength: A Doctor's Praise for Beth's Transformative Training",
+      quote: "I've had the pleasure of training with Beth for six years, and they've been my best years in terms of fitness, energy, and overall well-being. Beth is deeply committed, knowledgeable, and versatile--offering everything from kickboxing and HIIT to yoga, cardio, and strength training. Her passion and personalized approach make every session both effective and enjoyable."
+    },             
+    {
+      name: "Adela P.",
+      result: "A True Treasure: Beth's Impact on My Daughter's Growth",
+      quote: "Beth has been working with my daughter Eve, who has Down Syndrome for more than three years now. She is kind, patient, and awesome! I can see an overall improvement in Eve's energy level and body definition. Beth is an absolute treasure!!"
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +72,31 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isReviewsModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isReviewsModalOpen]);
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isReviewsModalOpen) {
+        setIsReviewsModalOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isReviewsModalOpen]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -113,6 +160,28 @@ function App() {
       setIsSubmitting(false);
     }
   };
+
+  const ReviewCard = ({ review, index }: { review: typeof allReviews[0], index: number }) => (
+    <div 
+      className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl p-6 sm:p-8 hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      <div className="mb-4 sm:mb-6">
+        <div className="text-rose-gold-500 font-bold text-lg sm:text-xl mb-2">{review.result}</div>
+        <div className="flex items-center mb-3 sm:mb-4">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} size={14} className="text-rose-gold-500 fill-current sm:w-4 sm:h-4" />
+          ))}
+        </div>
+      </div>
+      
+      <p className="text-warm-bronze-700 italic mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+        "{review.quote}"
+      </p>
+      
+      <div className="font-bold text-warm-bronze-900 text-sm sm:text-base">{review.name}</div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-glossy-white text-warm-bronze-900 overflow-x-hidden">
@@ -323,46 +392,99 @@ function App() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                name: "Constance B.",
-                result: "7 Years Strong: Personalized Workouts That Keep Me Moving at 76",
-                quote: "I've been using Beth for 7 years.  I'm 76 years old and have rheumatoid arthritis.  My workouts with her keep me limber.  She adjusts them depending on how I'm feeling.  On top of that she has a lovely personality that makes the sessions enjoyable.  When I'm away, I continue the workouts through FaceTime."
-              },
-              {
-                name: "Carmen L., MD",
-                result: "6 Years of Strength: A Doctor’s Praise for Beth’s Transformative Training",
-                quote: "I've had the pleasure of training with Beth for six years, and they've been my best years in terms of fitness, energy, and overall well-being. Beth is deeply committed, knowledgeable, and versatile--offering everything from kickboxing and HIIT to yoga, cardio, and strength training. Her passion and personalized approach make every session both effective and enjoyable."
-              },             
-              {
-                name: "Adela P.",
-                result: "A True Treasure: Beth’s Impact on My Daughter’s Growth",
-                quote: "Beth has been working with my daughter Eve, who has Down Syndrome for more than three years now. She is kind, patient, and awesome! I can see an overall improvement in Eve's energy level and body definition. Beth is an absolute treasure!!"
-              },
-            ].map((testimonial, index) => (
-              <div 
-                key={index}
-                className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl p-6 sm:p-8 hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300"
-              >
-                <div className="mb-4 sm:mb-6">
-                  <div className="text-rose-gold-500 font-bold text-lg sm:text-xl mb-2">{testimonial.result}</div>
-                  <div className="flex items-center mb-3 sm:mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} className="text-rose-gold-500 fill-current sm:w-4 sm:h-4" />
-                    ))}
-                  </div>
-                </div>
-                
-                <p className="text-warm-bronze-700 italic mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                  "{testimonial.quote}"
-                </p>
-                
-                <div className="font-bold text-warm-bronze-900 text-sm sm:text-base">{testimonial.name}</div>
-              </div>
+            {allReviews.map((review, index) => (
+              <ReviewCard key={index} review={review} index={index} />
             ))}
+          </div>
+
+          <div className="text-center mt-8 sm:mt-12">
+            <button 
+              onClick={() => setIsReviewsModalOpen(true)}
+              className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              See All Reviews
+            </button>
           </div>
         </div>
       </section>
+
+      {/* Reviews Modal */}
+      {isReviewsModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-warm-bronze-900/80 backdrop-blur-md transition-opacity duration-300"
+            onClick={() => setIsReviewsModalOpen(false)}
+          ></div>
+          
+          {/* Modal Content */}
+          <div className="relative w-full h-full max-w-none bg-white overflow-hidden animate-fade-in-up">
+            {/* Header */}
+            <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-soft-shadow px-4 sm:px-6 py-4 sm:py-6">
+              <div className="flex items-center justify-between max-w-7xl mx-auto">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <button
+                    onClick={() => setIsReviewsModalOpen(false)}
+                    className="p-2 hover:bg-soft-pink-50 rounded-full transition-colors duration-200"
+                    aria-label="Go back"
+                  >
+                    <ArrowLeft size={20} className="text-warm-bronze-700 sm:w-6 sm:h-6" />
+                  </button>
+                  <h2 className="text-2xl sm:text-4xl font-black text-warm-bronze-900">
+                    ALL <span className="text-rose-gold-500">REVIEWS</span>
+                  </h2>
+                </div>
+                
+                <button
+                  onClick={() => setIsReviewsModalOpen(false)}
+                  className="p-2 hover:bg-soft-pink-50 rounded-full transition-colors duration-200"
+                  aria-label="Close modal"
+                >
+                  <X size={20} className="text-warm-bronze-700 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="h-full overflow-y-auto pb-20">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  {allReviews.map((review, index) => (
+                    <div
+                      key={index}
+                      className="animate-fade-in-up"
+                      style={{ animationDelay: `${index * 150}ms` }}
+                    >
+                      <ReviewCard review={review} index={index} />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Call to Action in Modal */}
+                <div className="text-center mt-12 sm:mt-16">
+                  <div className="bg-gradient-to-br from-soft-pink-50 to-rose-gold-50 rounded-2xl p-6 sm:p-8 border border-rose-gold-200">
+                    <h3 className="text-2xl sm:text-3xl font-black text-warm-bronze-900 mb-4">
+                      Ready to Join Them?
+                    </h3>
+                    <p className="text-warm-bronze-600 mb-6 sm:mb-8 text-base sm:text-lg">
+                      Start your transformation journey today with a free assessment.
+                    </p>
+                    <button 
+                      onClick={() => {
+                        setIsReviewsModalOpen(false);
+                        scrollToSection('contact');
+                      }}
+                      className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                      Get Started Today
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Contact Section */}
       <section id="contact" className="py-12 sm:py-20 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
