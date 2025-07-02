@@ -333,7 +333,7 @@ function App() {
                 name: "Carmen L., MD",
                 result: "6 Years of Strength: A Doctor’s Praise for Beth’s Transformative Training",
                 quote: "I've had the pleasure of training with Beth for six years, and they've been my best years in terms of fitness, energy, and overall well-being. Beth is deeply committed, knowledgeable, and versatile--offering everything from kickboxing and HIIT to yoga, cardio, and strength training. Her passion and personalized approach make every session both effective and enjoyable."
-              }              
+              },             
               {
                 name: "Adela P.",
                 result: "A True Treasure: Beth’s Impact on My Daughter’s Growth",
