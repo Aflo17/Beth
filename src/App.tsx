@@ -318,7 +318,7 @@ function App() {
               REAL <span className="text-rose-gold-500">RESULTS</span>
             </h2>
             <p className="text-lg sm:text-xl text-warm-bronze-600 max-w-3xl mx-auto">
-              These transformations speak louder than words. Every success story represents dedication, consistency, and the power of proper guidance.
+              Every success story represents dedication, consistency, and the power of proper guidance.
             </p>
           </div>
 
