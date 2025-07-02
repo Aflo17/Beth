@@ -325,9 +325,9 @@ function App() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                name: "Sarah M.",
-                result: "Lost 45 lbs in 6 months",
-                quote: "The most life-changing experience. Not just physically, but mentally I'm a completely different person."
+                name: "Constance B.",
+                result: "7 Years Strong: Personalized Workouts That Keep Me Moving at 76",
+                quote: "I've been using Beth for 7 years.  I'm 76 years old and have rheumatoid arthritis.  My workouts with her keep me limber.  She adjusts them depending on how I'm feeling.  On top of that she has a lovely personality that makes the sessions enjoyable.  When I'm away, I continue the workouts through FaceTime."
               },
               {
                 name: "Mike R.",
