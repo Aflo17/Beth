@@ -330,9 +330,9 @@ function App() {
                 quote: "I've been using Beth for 7 years.  I'm 76 years old and have rheumatoid arthritis.  My workouts with her keep me limber.  She adjusts them depending on how I'm feeling.  On top of that she has a lovely personality that makes the sessions enjoyable.  When I'm away, I continue the workouts through FaceTime."
               },
               {
-                name: "Mike R.",
-                result: "Gained 25 lbs muscle",
-                quote: "Finally broke through my plateau. The systematic approach made all the difference in my strength gains."
+                name: "Adela P.",
+                result: "A True Treasure: Beth’s Impact on My Daughter’s Growth",
+                quote: "Beth has been working with my daughter Eve, who has Down Syndrome for more than three years now. She is kind, patient, and awesome! I can see an overall improvement in Eve's energy level and body definition. Beth is an absolute treasure!!"
               },
               {
                 name: "Jessica L.",
