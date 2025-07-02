@@ -93,7 +93,7 @@ function App() {
       });
 
       if (response.ok) {
-        setSubmitMessage('Thank you! Your request has been submitted. I\'ll reach out within 24–48 hours to schedule your session. If you don’t see my email, check your spam folder.');
+        setSubmitMessage('Thank you! Your request has been submitted. I\'ll reach out within 24–48 hours to schedule your session. If you don't see my email, check your spam folder.');
         setFormData({
           firstName: '',
           lastName: '',
@@ -382,7 +382,7 @@ function App() {
       <section id="contact" className="py-12 sm:py-20 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
-            <div>
+            <div className="flex flex-col justify-center">
               <h2 className="text-3xl sm:text-5xl font-black mb-6 sm:mb-8 text-warm-bronze-900">
                 START YOUR <span className="text-rose-gold-500">TRANSFORMATION</span>
               </h2>
