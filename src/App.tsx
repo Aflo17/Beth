@@ -35,7 +35,7 @@ function App() {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'programs', 'about', 'contact'];
+      const sections = ['home', 'programs', 'about', 'transformations', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -133,7 +133,7 @@ function App() {
           </div>
           
           <div className="hidden md:flex space-x-8">
-            {['home', 'programs', 'about', 'contact'].map((section) => (
+            {['home', 'programs', 'about', 'transformations', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -141,7 +141,7 @@ function App() {
                   activeSection === section ? 'text-rose-gold-500' : 'text-warm-bronze-700 hover:text-rose-gold-500'
                 }`}
               >
-                {section}
+                {section === 'transformations' ? 'Results' : section}
               </button>
             ))}
           </div>
@@ -306,6 +306,74 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Transformations Section */}
+      <section id="transformations" className="py-12 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-5xl font-black mb-4 text-warm-bronze-900">
+              REAL <span className="text-rose-gold-500">RESULTS</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-warm-bronze-600 max-w-3xl mx-auto">
+              These transformations speak louder than words. Every success story represents dedication, consistency, and the power of proper guidance.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                name: "Sarah M.",
+                result: "Lost 45 lbs in 6 months",
+                quote: "The most life-changing experience. Not just physically, but mentally I'm a completely different person.",
+                image: "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+              },
+              {
+                name: "Mike R.",
+                result: "Gained 25 lbs muscle",
+                quote: "Finally broke through my plateau. The systematic approach made all the difference in my strength gains.",
+                image: "https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+              },
+              {
+                name: "Jessica L.",
+                result: "Marathon PR by 45 minutes",
+                quote: "Thought I'd hit my limit, but this training revealed potential I never knew I had. Absolutely incredible results.",
+                image: "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+              }
+            ].map((testimonial, index) => (
+              <div 
+                key={index}
+                className="group bg-gradient-to-br from-glossy-white to-soft-pink-50 rounded-2xl overflow-hidden hover:from-soft-pink-50 hover:to-rose-gold-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl border border-soft-shadow hover:border-rose-gold-300"
+              >
+                <div className="relative h-48 sm:h-64 overflow-hidden">
+                  <img 
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-warm-bronze-900/60 to-transparent"></div>
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                    <div className="text-soft-pink-200 font-bold text-sm sm:text-lg">{testimonial.result}</div>
+                  </div>
+                </div>
+                
+                <div className="p-4 sm:p-6">
+                  <div className="flex items-center mb-3 sm:mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="text-rose-gold-500 fill-current sm:w-4 sm:h-4" />
+                    ))}
+                  </div>
+                  
+                  <p className="text-warm-bronze-700 italic mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
+                    "{testimonial.quote}"
+                  </p>
+                  
+                  <div className="font-bold text-warm-bronze-900 text-sm sm:text-base">{testimonial.name}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
