@@ -93,7 +93,7 @@ function App() {
       });
 
       if (response.ok) {
-        setSubmitMessage('Thank you! Your assessment request has been submitted. We\'ll contact you within 24-48 hours to schedule your free session.');
+        setSubmitMessage('Thank you! Your request has been submitted. I\'ll reach out within 24–48 hours to schedule your session. If you don’t see our email, check your spam folder.');
         setFormData({
           firstName: '',
           lastName: '',
