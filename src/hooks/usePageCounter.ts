@@ -4,7 +4,7 @@ export const usePageCounter = () => {
   const [visitCount, setVisitCount] = useState<number>(() => {
     // Initialize with current count from localStorage
     const currentCount = localStorage.getItem('fitwithbeth-visit-count');
-    return currentCount ? parseInt(currentCount, 10) : 0;
+    return currentCount ? parseInt(currentCount, 0) : 0;
   });
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const usePageCounter = () => {
     if (!hasCountedThisSession) {
       // Get current count from localStorage
       const currentCount = localStorage.getItem('fitwithbeth-visit-count');
-      let count = currentCount ? parseInt(currentCount, 10) : 0;
+      let count = currentCount ? parseInt(currentCount, 0) : 0;
       
       // Increment the count
       count += 1;
