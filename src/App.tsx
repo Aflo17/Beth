@@ -84,7 +84,22 @@ function App() {
       name: "Camelia G.",
       result: "Kind, Persistent, and Uplifting: Beth Brings Out Your Best",
       quote: "I have been training with Beth for almost a year! she is kindest and most persevering trainer! she has techniques to address your weakness and praising kindly your progress! wholeheartedly recommended !"
-    }      
+    },
+    {
+      name: "Modia A.",
+      result: "Worth the Commute: No One Trains Like Beth",
+      quote: "Beth is the best trainer I've ever worked with. I used to commute from New Jersey to New York just to train with her. I worked with a few other trainers, but none of them came close to the level of motivation, support, and expertise Beth brings to every session. She truly knows how to push you without making you feel overwhelmed, and she always finds a way to keep things fun and challenging. I've never felt stronger, more confident, or more capable in my workouts than when I was training with her. If you're looking for someone who genuinely cares about your progress and knows how to get results, Beth is the one."
+    },
+    {
+      name: "Victoria N.",
+      result: "Recovery, Growth, and Long-Term Results: Beth Delivers It All",
+      quote: "I've been training with Beth for the past five years, and I truly can't imagine working with anyone else. She's not only incredibly kind and supportive, but she also holds you to a high standard of accountability that keeps you focused and motivated. After injuring my back two years ago, Beth was the only person I trusted to guide me through both recovery and rebuilding my strength. Her knowledge, care, and dedication to her clients are unmatched. She always shows up ready to challenge me and push me to be my best, and I'm fully committed to continuing this journey with her for the long haul. Nothing but the best things to say -- Beth genuinely cares, and it shows in every session."
+    },
+    {
+      name: "Cristina O.",
+      result: "Grateful for 6 Years of Support, Strength, and Friendship",
+      quote: "I met Beth 6 years ago in a commercial gym where I had no idea what I was doing. Not only has she been my trainer ever since, but she's become my friend. Beth's dedication to her clients goes far beyond what the job description requires. She goes above and beyond and it shows in the results. I can't say enough how thankful I am for her!"
+    },    
   ];
 
   useEffect(() => {
