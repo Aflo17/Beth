@@ -59,6 +59,11 @@ function App() {
       name: "Melissa V.",
       result: "From Beginner to Confident: Beth Is the Coach Who Keeps You Going",
       quote: "Beth is an amazing fitness coach! I started working with her in 2017 with no gym experience, and she provided me with the fundamental knowledge I needed to enter the gym with confidence. I moved away and reconnected with Beth in 2023 after learning she offers training virtually. We've been back at it for two years, and her careful attention to planning my workout and meals around my busy schedule is top tier. Beth is the accountability partner everyone needs. She takes your journey very seriously and is sure to stretch you based on your fitness goals. I highly recommend training with Beth - whether you're trying to build confidence with starting your fitness journey, committed to simply moving your body every day, or looking to achieve a specific physique, she's the coach to call! I highly recommend!"
+    },
+    {
+      name: "Melissa V.",
+      result: "From Beginner to Confident: Beth Is the Coach Who Keeps You Going",
+      quote: "Beth is an amazing fitness coach! I started working with her in 2017 with no gym experience, and she provided me with the fundamental knowledge I needed to enter the gym with confidence. I moved away and reconnected with Beth in 2023 after learning she offers training virtually. We've been back at it for two years, and her careful attention to planning my workout and meals around my busy schedule is top tier. Beth is the accountability partner everyone needs. She takes your journey very seriously and is sure to stretch you based on your fitness goals. I highly recommend training with Beth - whether you're trying to build confidence with starting your fitness journey, committed to simply moving your body every day, or looking to achieve a specific physique, she's the coach to call! I highly recommend!"
     }
   ];
 
