@@ -64,7 +64,7 @@ function App() {
       name: "Shamika O.",
       result: "Skilled, Supportive, and Results-Driven: Beth Is the Real Deal",
       quote: "I've been working with Beth for 1 year, and I can confidently say she is the best trainer I've ever had. From day one, she took the time to really understand my fitness goals and created a personalized plan that was both challenging and realistic for me. What sets Beth apart is her ability to push me to my limits while keeping the sessions fun and motivating. She always knows exactly when to encourage me to go harder and when to adjust the workout if something doesn't feel right. I've made so much progress, not just physically but also mentally. Her positive attitude and consistent support make a huge difference! Her knowledge of different exercises, proper form, and injury prevention is top-notch. Whether I'm lifting weights, doing cardio, or focusing on flexibility, I feel safe and confident knowing she's there to guide me. If you're looking for a trainer who's not only skilled but also genuinely cares about your success, Beth is the one! I couldn't recommend her more."
-    }
+    },
     {
       name: "Michelle C.",
       result: "From Spartan Races to Cancer Recovery: A Trainer Who Truly Shows Up",
