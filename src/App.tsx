@@ -65,6 +65,26 @@ function App() {
       result: "Skilled, Supportive, and Results-Driven: Beth Is the Real Deal",
       quote: "I've been working with Beth for 1 year, and I can confidently say she is the best trainer I've ever had. From day one, she took the time to really understand my fitness goals and created a personalized plan that was both challenging and realistic for me. What sets Beth apart is her ability to push me to my limits while keeping the sessions fun and motivating. She always knows exactly when to encourage me to go harder and when to adjust the workout if something doesn't feel right. I've made so much progress, not just physically but also mentally. Her positive attitude and consistent support make a huge difference! Her knowledge of different exercises, proper form, and injury prevention is top-notch. Whether I'm lifting weights, doing cardio, or focusing on flexibility, I feel safe and confident knowing she's there to guide me. If you're looking for a trainer who's not only skilled but also genuinely cares about your success, Beth is the one! I couldn't recommend her more."
     }
+    {
+      name: "Michelle C.",
+      result: "From Spartan Races to Cancer Recovery: A Trainer Who Truly Shows Up",
+      quote: "Beth has been a light that ignites my motivation and has been a supportive trainer and coach. I've trained with Beth for a few years and through my journey of strength and cancer she has been able to adjust and adapt to my needs. She pushed me when I was at my strongest to be better and to prepare for a spartan and help me keep myself strong when I was at my weakest. She listens with compassion and understanding but will hold you accountable for you to be your best self. Her guidance and knowledge to be your best self is incomparable to any trainer I have worked with before."
+    },
+    {
+      name: "Marylee C.",
+      result: "More Than Fitness: Beth Helped Me Become My Best Self",
+      quote: "Working with Beth has been one of the best decisions I've ever made. From day one, she believed in me even when I didn't believe in myself. Her knowledge, support, and dedication helped me transform not only my body but my mindset too. Every session was challenging, motivating, and tailored specifically to my goals. Beth pushed me beyond my limits in the best way possible & because of that, I've gained strength, confidence, and energy I never thought I had. She taught me proper form, held me accountable, and celebrated every milestone with me big or small. This journey wasn't just about weight loss or muscle gain it was about becoming the best version of myself, and I couldn't have done it without her guidance. If you're looking for someone who genuinely cares and will help you get real, lasting results,  Beth is the one to go to. Highly recommend -- 10/10!"
+    },
+    {
+      name: "Ashley P.",
+      result: "8 Years Strong: Beth Is the Trainer I Trust Most",
+      quote: "I've known Beth for over 8 years and been training with her on and off ever since. Beth is one of the only people I would ever trust to guide me in my fitness journey. Beth has a wealth of knowledge and truly cares about each of her clients! She will push you to your limits and put not only your physical toughness, but your mental toughness to the test. If you're looking for someone to train with I'd highly recommend you to train with Beth!!"
+    },
+    {
+      name: "Camelia G.",
+      result: "Kind, Persistent, and Uplifting: Beth Brings Out Your Best",
+      quote: "I have been training with Beth for almost a year! she is kindest and most persevering trainer! she has techniques to address your weakness and praising kindly your progress! wholeheartedly recommended !"
+    },      
   ];
 
   useEffect(() => {
