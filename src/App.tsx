@@ -84,7 +84,7 @@ function App() {
       name: "Camelia G.",
       result: "Kind, Persistent, and Uplifting: Beth Brings Out Your Best",
       quote: "I have been training with Beth for almost a year! she is kindest and most persevering trainer! she has techniques to address your weakness and praising kindly your progress! wholeheartedly recommended !"
-    },      
+    }      
   ];
 
   useEffect(() => {
