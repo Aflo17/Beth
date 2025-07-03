@@ -33,8 +33,8 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  // All existing reviews data
-  const allReviews = [
+  // Reviews shown on main page
+  const mainPageReviews = [
     {
       name: "Constance B.",
       result: "7 Years Strong: Personalized Workouts That Keep Me Moving at 76",
@@ -50,6 +50,16 @@ function App() {
       result: "A True Treasure: Beth's Impact on My Daughter's Growth",
       quote: "Beth has been working with my daughter Eve, who has Down Syndrome for more than three years now. She is kind, patient, and awesome! I can see an overall improvement in Eve's energy level and body definition. Beth is an absolute treasure!!"
     },
+  ];
+
+  // All reviews for the modal (includes main page reviews + additional ones)
+  const allReviews = [
+    ...mainPageReviews,
+    {
+      name: "Melissa V.",
+      result: "From Beginner to Confident: Beth Is the Coach Who Keeps You Going",
+      quote: "Beth is an amazing fitness coach! I started working with her in 2017 with no gym experience, and she provided me with the fundamental knowledge I needed to enter the gym with confidence. I moved away and reconnected with Beth in 2023 after learning she offers training virtually. We've been back at it for two years, and her careful attention to planning my workout and meals around my busy schedule is top tier. Beth is the accountability partner everyone needs. She takes your journey very seriously and is sure to stretch you based on your fitness goals. I highly recommend training with Beth - whether you're trying to build confidence with starting your fitness journey, committed to simply moving your body every day, or looking to achieve a specific physique, she's the coach to call! I highly recommend!"
+    }
   ];
 
   useEffect(() => {
@@ -392,7 +402,7 @@ function App() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {allReviews.map((review, index) => (
+            {mainPageReviews.map((review, index) => (
               <ReviewCard key={index} review={review} index={index} />
             ))}
           </div>
