@@ -100,6 +100,11 @@ function App() {
       result: "Grateful for 6 Years of Support, Strength, and Friendship",
       quote: "I met Beth 6 years ago in a commercial gym where I had no idea what I was doing. Not only has she been my trainer ever since, but she's become my friend. Beth's dedication to her clients goes far beyond what the job description requires. She goes above and beyond and it shows in the results. I can't say enough how thankful I am for her!"
     },    
+    {
+      name: "Cristina O.",
+      result: "Beth Is the Best Trainer I’ve Had and the Best Decision for My Well-Being",
+      quote: "Beth is hands-down the best trainer I've ever worked with. Not only is she incredibly knowledgeable and professional, but she's also one of the most supportive and down-to-earth people I know. I started working with her to get stronger and feel better in my body, and I can honestly say it's been one of the best decisions I've made for myself. Beth really listens--she takes the time to understand your goals, your limitations, and what actually motivates you. I have knee issues, and she's been so thoughtful with modifying exercises so I can still get a great workout without hurting myself. Her sessions are always challenging but never overwhelming, and she somehow manages to make working out something I actually look forward to. I can tell you she genuinely cares about the people she works with. She's encouraging, real, and always shows up with great energy. She's helped me stay consistent, feel more confident, and celebrate my progress--even on the tough days. If you're looking for a trainer who knows her stuff, meets you where you're at, and makes you feel like you can actually reach your goals, Beth is your girl. I can't recommend her enough."
+    },    
   ];
 
   useEffect(() => {
