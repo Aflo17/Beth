@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export const usePageCounter = () => {
-  const [visitCount, setVisitCount] = useState<number>(0);
+  const [visitCount, setVisitCount] = useState<number>(() => {
+    // Initialize with current count from localStorage
+    const currentCount = localStorage.getItem('fitwithbeth-visit-count');
+    return currentCount ? parseInt(currentCount, 10) : 0;
+  });
 
   useEffect(() => {
     // Check if we've already counted this session
@@ -24,12 +28,8 @@ export const usePageCounter = () => {
       
       // Update state
       setVisitCount(count);
-    } else {
-      // Just get the current count without incrementing
-      const currentCount = localStorage.getItem('fitwithbeth-visit-count');
-      const count = currentCount ? parseInt(currentCount, 10) : 0;
-      setVisitCount(count);
     }
+    // If session already counted, we already have the correct count from initialization
   }, []);
 
   return visitCount;
