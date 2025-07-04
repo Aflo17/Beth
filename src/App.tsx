@@ -36,7 +36,7 @@ function App() {
   const [submitMessage, setSubmitMessage] = useState('');
   
   // Get visit count from custom hook
-  const visitCount = usePageCounter();
+  const { visitCount, isLoading } = usePageCounter();
 
   // Reviews shown on main page
   const mainPageReviews = [
@@ -734,7 +734,9 @@ function App() {
                 <span>Transform Powerfully. Built by Dreams Flo</span>
                 <div className="flex items-center space-x-1 text-rose-gold-500">
                   <Eye size={12} className="sm:w-3 sm:h-3" />
-                  <span className="font-medium">{visitCount.toLocaleString()} visits</span>
+                  <span className="font-medium">
+                    {isLoading ? '...' : `${visitCount.toLocaleString()} visits`}
+                  </span>
                 </div>
               </div>
             </div>
