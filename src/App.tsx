@@ -810,33 +810,3 @@ function App() {
 }
 
 export default App;
-              <img 
-                src="/beth-circular-logo.png" 
-                alt="Fit With Beth Logo" 
-                className="h-6 w-6 sm:h-8 sm:w-8 object-contain rounded-full shadow-sm"
-              />
-              <div className="text-lg sm:text-2xl font-bold text-warm-bronze-900">
-                Fit With <span className="text-rose-gold-500">Beth</span>
-              </div>
-            </div>
-            
-            <div className="text-warm-bronze-600 text-center md:text-right">
-              <p className="mb-1 sm:mb-2 text-sm sm:text-base">© 2025 Fit With Beth. All rights reserved.</p>
-              <div className="flex items-center justify-center md:justify-end space-x-4 text-xs sm:text-sm">
-                <span>Transform Powerfully. Built by Dreams Flo</span>
-                <div className="flex items-center space-x-1 text-rose-gold-500">
-                  <Eye size={12} className="sm:w-3 sm:h-3" />
-                  <span className="font-medium">
-                    {isLoading ? '...' : `${visitCount.toLocaleString()} visits`}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
-
-export default App;
