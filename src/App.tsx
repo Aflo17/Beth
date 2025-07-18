@@ -18,6 +18,9 @@ import {
   Eye
 } from 'lucide-react';
 import { usePageCounter } from './hooks/usePageCounter';
+import { LocalSEO } from './components/LocalSEO';
+import { LocationContent } from './components/LocationContent';
+import { NAP } from './components/NAP';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -245,6 +248,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-glossy-white text-warm-bronze-900 overflow-x-hidden">
+      {/* Local SEO Components */}
+      <LocalSEO />
+      
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-glossy-white/95 backdrop-blur-sm py-3 shadow-lg' : 'bg-transparent py-4'
@@ -302,7 +308,7 @@ function App() {
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-soft-pink-100 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
-            Elite personal training that builds champions. Unleash your potential with proven methods and unwavering dedication.
+            Elite personal training in New York City that builds champions. Unleash your potential with proven methods and unwavering dedication.
           </p>
           
           <button 
@@ -318,6 +324,9 @@ function App() {
         </div>
       </section>
 
+      {/* Location Content Section */}
+      <LocationContent />
+
       {/* Programs Section */}
       <section id="programs" className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -326,7 +335,7 @@ function App() {
               TRAINING <span className="text-rose-gold-500">PROGRAMS</span>
             </h2>
             <p className="text-lg sm:text-xl text-warm-bronze-600 max-w-3xl mx-auto">
-              Choose your path to greatness. Each program is designed to push your limits and deliver transformative results.
+              Choose your path to greatness in NYC. Each program is designed to push your limits and deliver transformative results for busy New Yorkers.
             </p>
           </div>
 
@@ -556,18 +565,11 @@ function App() {
               </h2>
               
               <p className="text-lg sm:text-xl text-warm-bronze-700 mb-8 sm:mb-12 leading-relaxed">
-                Ready to unlock your potential? Book your free assessment and discover what's possible when you train with purpose and precision.
+                Ready to unlock your potential in New York City? Book your free assessment and discover what's possible when you train with purpose and precision with NYC's elite trainer.
               </p>
 
-              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-                <div className="flex items-center">
-                  <Mail className="text-rose-gold-500 mr-3 sm:mr-4 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg text-warm-bronze-700">beth@fitwithbeth.com</span>
-                </div>
-                <div className="flex items-center">
-                  <Instagram className="text-rose-gold-500 mr-3 sm:mr-4 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg text-warm-bronze-700">@bethybaby213</span>
-                </div>
+              <div className="mb-8 sm:mb-12">
+                <NAP variant="contact" />
               </div>
 
               <div className="bg-gradient-to-br from-rose-gold-100 to-soft-pink-100 border border-rose-gold-200 rounded-2xl p-6 sm:p-8">
@@ -716,8 +718,98 @@ function App() {
       {/* Footer */}
       <footer className="bg-white py-8 sm:py-12 border-t border-soft-shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 sm:space-x-3 mb-4 md:mb-0">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* Brand */}
+            <div className="flex flex-col items-center md:items-start">
+              <div className="flex items-center space-x-2 sm:space-x-3 mb-4">
+                <img 
+                  src="/beth-circular-logo.png" 
+                  alt="Fit With Beth Logo" 
+                  className="h-6 w-6 sm:h-8 sm:w-8 object-contain rounded-full shadow-sm"
+                />
+                <div className="text-lg sm:text-2xl font-bold text-warm-bronze-900">
+                  Fit With <span className="text-rose-gold-500">Beth</span>
+                </div>
+              </div>
+              <p className="text-warm-bronze-600 text-center md:text-left text-sm">
+                Elite personal training in New York City. Transform powerfully with proven methods.
+              </p>
+            </div>
+            
+            {/* Contact Info */}
+            <div className="text-center md:text-left">
+              <NAP variant="footer" />
+            </div>
+            
+            {/* Quick Links */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold text-warm-bronze-900 mb-3">Quick Links</h4>
+              <div className="space-y-2">
+                <div>
+                  <button 
+                    onClick={() => scrollToSection('programs')}
+                    className="text-warm-bronze-700 hover:text-rose-gold-500 transition-colors text-sm"
+                  >
+                    Training Programs
+                  </button>
+                </div>
+                <div>
+                  <button 
+                    onClick={() => scrollToSection('about')}
+                    className="text-warm-bronze-700 hover:text-rose-gold-500 transition-colors text-sm"
+                  >
+                    About Beth
+                  </button>
+                </div>
+                <div>
+                  <button 
+                    onClick={() => scrollToSection('transformations')}
+                    className="text-warm-bronze-700 hover:text-rose-gold-500 transition-colors text-sm"
+                  >
+                    Client Results
+                  </button>
+                </div>
+                <div>
+                  <a 
+                    href="https://instagram.com/bethybaby213" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-warm-bronze-700 hover:text-rose-gold-500 transition-colors text-sm"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-soft-shadow pt-6">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="text-warm-bronze-600 text-center md:text-left mb-4 md:mb-0">
+                <p className="mb-1 sm:mb-2 text-sm sm:text-base">© 2025 Fit With Beth. All rights reserved.</p>
+                <NAP variant="inline" showIcons={false} className="text-xs" />
+              </div>
+              
+              <div className="text-warm-bronze-600 text-center md:text-right">
+                <div className="flex items-center justify-center md:justify-end space-x-4 text-xs sm:text-sm">
+                  <span>Transform Powerfully. Built by Dreams Flo</span>
+                  <div className="flex items-center space-x-1 text-rose-gold-500">
+                    <Eye size={12} className="sm:w-3 sm:h-3" />
+                    <span className="font-medium">
+                      {isLoading ? '...' : `${visitCount.toLocaleString()} visits`}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
               <img 
                 src="/beth-circular-logo.png" 
                 alt="Fit With Beth Logo" 
