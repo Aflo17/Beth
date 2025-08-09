@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 export const usePageCounter = () => {
   const [visitCount, setVisitCount] = useState<number>(0);
@@ -9,12 +9,7 @@ export const usePageCounter = () => {
     const incrementPageViews = async () => {
       try {
         // Check if Supabase is properly configured
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-        const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-        
-        if (!supabaseUrl || !supabaseAnonKey || 
-            supabaseUrl.includes('your-project-id') || 
-            supabaseAnonKey.includes('your-anon-key')) {
+        if (!isSupabaseConfigured || !supabase) {
           console.log('Supabase not configured, using default visit count');
           setVisitCount(1247); // Default fallback count
           setIsLoading(false);
