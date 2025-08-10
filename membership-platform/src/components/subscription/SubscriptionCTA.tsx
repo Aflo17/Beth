@@ -84,7 +84,6 @@ export function SubscriptionCTA() {
           )}
         </button>
 
-        <p className="text-center text-warm-bronze-500 text-sm mt-4">
         <p className="text-center text-gray-500 text-sm mt-4">
           Secure payment powered by Stripe. Cancel anytime.
         </p>
