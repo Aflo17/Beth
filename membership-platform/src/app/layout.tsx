@@ -18,25 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta httpEquiv="Content-Security-Policy" content="
-          default-src 'self';
-          script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com;
-          style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-          font-src 'self' https://fonts.gstatic.com;
-          img-src 'self' data: https:;
-          media-src 'self' blob:;
-          connect-src 'self' https://*.supabase.co https://api.stripe.com;
-          frame-src https://js.stripe.com;
-        " />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
-      </head>
       <body className={inter.className}>
         <AuthProvider>
-          <div className="min-h-screen bg-gray-50">
+          <div className="min-h-screen bg-gradient">
             {children}
           </div>
         </AuthProvider>

@@ -9,6 +9,7 @@ import { SubscriptionCTA } from '@/components/subscription/SubscriptionCTA';
 import { VideoLibrary } from '@/components/videos/VideoLibrary';
 import { AccountControls } from '@/components/subscription/AccountControls';
 import { Loader2 } from 'lucide-react';
+import styles from './page.module.css';
 
 export default function MembersPage() {
   const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
@@ -20,10 +21,10 @@ export default function MembersPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
-        <div className="text-center">
-          <Loader2 className="animate-spin mx-auto mb-4 text-rose-gold-500" size={48} />
-          <p className="text-warm-bronze-600">Loading...</p>
+      <div className={styles.container}>
+        <div className={styles.loadingContainer}>
+          <Loader2 className={`${styles.loadingSpinner} animate-spin`} size={48} />
+          <p className={styles.loadingText}>Loading...</p>
         </div>
       </div>
     );
@@ -32,7 +33,7 @@ export default function MembersPage() {
   // Not logged in - show auth forms
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+      <div className={styles.container}>
         {authMode === 'login' ? (
           <LoginForm onToggleMode={toggleAuthMode} />
         ) : (
@@ -45,7 +46,7 @@ export default function MembersPage() {
   // Logged in but email not verified
   if (!user.email_verified) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+      <div className={styles.container}>
         <EmailVerificationNotice />
       </div>
     );
@@ -54,7 +55,7 @@ export default function MembersPage() {
   // Logged in, verified, but no active subscription
   if (!subscription || subscription.status !== 'active') {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+      <div className={styles.container}>
         <SubscriptionCTA />
       </div>
     );
@@ -62,26 +63,24 @@ export default function MembersPage() {
 
   // Logged in, verified, with active subscription - show video library
   return (
-    <div className="min-h-screen bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
-      <header className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-soft-shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-warm-bronze-900">
-              Fit With <span className="text-rose-gold-500">Beth</span> - Premium Content
-            </h1>
-            <div className="text-sm text-warm-bronze-600">
-              Welcome back, <span className="font-medium text-rose-gold-600">{user.email}</span>
-            </div>
+    <div className="min-h-screen bg-gradient">
+      <header className={styles.header}>
+        <div className={styles.headerContent}>
+          <h1 className={styles.headerTitle}>
+            Fit With <span className={styles.headerBrand}>Beth</span> - Premium Content
+          </h1>
+          <div className={styles.headerWelcome}>
+            Welcome back, <span className={styles.headerEmail}>{user.email}</span>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
+      <main className={styles.main}>
+        <div className={styles.grid}>
+          <div>
             <VideoLibrary />
           </div>
-          <div className="lg:col-span-1">
+          <div>
             <AccountControls />
           </div>
         </div>
