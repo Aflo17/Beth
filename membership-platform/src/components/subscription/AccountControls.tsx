@@ -34,26 +34,27 @@ export function AccountControls() {
   return (
     <div className="card-gradient rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
       <h3 className="text-xl font-semibold text-warm-bronze-900 mb-6 flex items-center">
+      <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
         <User className="mr-2" size={24} />
         Account Settings
       </h3>
 
       <div className="space-y-4">
-        <div className="flex items-center justify-between p-4 bg-soft-pink-50 rounded-lg border border-soft-pink-100">
+        <div className="flex items-center justify-between p-4 bg-rose-50 rounded-lg border border-rose-100">
           <div>
-            <p className="font-medium text-warm-bronze-900">Email</p>
-            <p className="text-warm-bronze-600">{user?.email}</p>
+            <p className="font-medium text-gray-900">Email</p>
+            <p className="text-gray-600">{user?.email}</p>
           </div>
           <div className="text-right">
-            <p className="font-medium text-warm-bronze-900">Status</p>
-            <p className="text-rose-gold-600 capitalize font-medium">{subscription?.status || 'Active'}</p>
+            <p className="font-medium text-gray-900">Status</p>
+            <p className="text-rose-600 capitalize font-medium">{subscription?.status || 'Active'}</p>
           </div>
         </div>
 
         {subscription && (
-          <div className="p-4 bg-rose-gold-50 rounded-lg border border-rose-gold-100">
-            <p className="font-medium text-warm-bronze-900 mb-2">Subscription Details</p>
-            <p className="text-warm-bronze-700 text-sm">
+          <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
+            <p className="font-medium text-gray-900 mb-2">Subscription Details</p>
+            <p className="text-gray-700 text-sm">
               Next billing: {new Date(subscription.current_period_end).toLocaleDateString()}
             </p>
           </div>
