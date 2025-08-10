@@ -51,6 +51,14 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {(!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) && (
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <p className="text-yellow-700 text-sm">
+                <strong>Demo Mode:</strong> Supabase credentials not configured. Please set up your environment variables to enable full functionality.
+              </p>
+            </div>
+          )}
+          
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-warm-bronze-700 mb-2">
               Email Address
