@@ -19,42 +19,42 @@
 
 @layer components {
   .btn-primary {
-    background-image: linear-gradient(to right, theme('colors.rose-gold.400'), theme('colors.soft-pink.400'));
+    background-image: linear-gradient(to right, #f472b6, #f98080);
     @apply text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
   }
   
   .btn-primary:hover {
-    background-image: linear-gradient(to right, theme('colors.soft-pink.400'), theme('colors.rose-gold.400'));
+    background-image: linear-gradient(to right, #f98080, #f472b6);
   }
   
   .btn-secondary {
-    background-color: theme('colors.warm-bronze.100');
-    color: theme('colors.warm-bronze.700');
+    background-color: #fef7f0;
+    color: #92400e;
     @apply font-semibold py-2 px-4 rounded-lg transition-colors;
   }
   
   .btn-secondary:hover {
-    background-color: theme('colors.warm-bronze.200');
+    background-color: #fde8d3;
   }
   
   .input-field {
     @apply w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors bg-white text-gray-900;
-    --tw-ring-color: theme('colors.rose-gold.400');
-    border-color: theme('colors.rose-gold.400');
+    --tw-ring-color: #f472b6;
+    border-color: #f472b6;
   }
   
   .input-field:focus {
     --tw-ring-width: 2px;
-    border-color: theme('colors.rose-gold.400');
+    border-color: #f472b6;
   }
   
   .card-gradient {
-    background-image: linear-gradient(to bottom right, white, theme('colors.rose-gold.50'));
+    background-image: linear-gradient(to bottom right, white, #fdf2f8);
     @apply border border-gray-200 transition-all duration-300;
   }
   
   .card-gradient:hover {
-    border-color: theme('colors.rose-gold.300');
+    border-color: #f9a8d4;
   }
 }
 
