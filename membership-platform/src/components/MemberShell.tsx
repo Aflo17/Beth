@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { LoginCard } from './LoginCard';
-import { SubscribeCTA } from './SubscribeCTA';
-import { VideoList } from './VideoList';
-import { AccountCard } from './AccountCard';
-import styles from './MemberShell.module.css';
+import { LoginCard } from '../../components/LoginCard';
+import { SubscribeCTA } from '../../components/SubscribeCTA';
+import { VideoList } from '../../components/VideoList';
+import { AccountCard } from '../../components/AccountCard';
+import styles from '../../components/MemberShell.module.css';
 
 interface MemberShellProps {
   user: any;
