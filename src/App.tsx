@@ -276,10 +276,10 @@ function App() {
           </div>
 
           <button 
-            onClick={() => window.open('http://localhost:3000/members', '_blank')}
+            onClick={() => scrollToSection('contact')}
             className="bg-rose-gold-500 hover:bg-soft-pink-500 text-white px-3 py-2 sm:px-6 sm:py-2 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base"
           >
-            Member Login
+            Get Started
           </button>
         </div>
       </nav>
@@ -306,10 +306,10 @@ function App() {
           </p>
           
           <button 
-            onClick={() => window.open('http://localhost:3000/members', '_blank')}
+            onClick={() => scrollToSection('contact')}
             className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
           >
-            JOIN NOW
+            START NOW
           </button>
         </div>
 
@@ -377,10 +377,10 @@ function App() {
                 </ul>
 
                 <button 
-                  onClick={() => window.open('http://localhost:3000/members', '_blank')}
+                  onClick={() => scrollToSection('contact')}
                   className="w-full bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base mt-auto"
                 >
-                  Join Now
+                  Get Started
                 </button>
               </div>
             ))}
@@ -426,16 +426,16 @@ function App() {
 
           <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
             <button 
-              onClick={() => window.open('http://localhost:3000/members', '_blank')}
+              onClick={() => scrollToSection('contact')}
               className="w-full sm:w-auto bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
             >
-              START MEMBERSHIP
+              GET STARTED
             </button>
             <button 
-              onClick={() => window.open('http://localhost:3000/members', '_blank')}
+              onClick={() => scrollToSection('contact')}
               className="w-full sm:w-auto bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105"
             >
-              MEMBER LOGIN
+              CONTACT US
             </button>
           </div>
         </div>
@@ -583,10 +583,10 @@ function App() {
                       Start your transformation journey today with a free assessment.
                     </p>
                     <button 
-                      onClick={() => window.open('http://localhost:3000/members', '_blank')}
+                      onClick={() => scrollToSection('contact')}
                       className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
-                      Join Membership
+                      Get Started
                     </button>
                   </div>
                 </div>
