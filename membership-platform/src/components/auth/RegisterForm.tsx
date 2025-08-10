@@ -104,7 +104,7 @@ export function RegisterForm({ onToggleMode }: RegisterFormProps) {
               placeholder="Enter your email"
             />
             {errors.email && (
-              <p className="text-rose-600 text-sm mt-1">{errors.email}</p>
+              <p className="text-rose-gold-600 text-sm mt-1">{errors.email.message}</p>
             )}
           </div>
 
@@ -124,13 +124,13 @@ export function RegisterForm({ onToggleMode }: RegisterFormProps) {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-rose-500 transition-colors"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-warm-bronze-500 hover:text-rose-gold-500 transition-colors"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
             {errors.password && (
-              <p className="text-rose-600 text-sm mt-1">{errors.password}</p>
+              <p className="text-rose-gold-600 text-sm mt-1">{errors.password.message}</p>
             )}
           </div>
 
@@ -150,19 +150,19 @@ export function RegisterForm({ onToggleMode }: RegisterFormProps) {
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-rose-500 transition-colors"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-warm-bronze-500 hover:text-rose-gold-500 transition-colors"
               >
                 {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
             {errors.confirmPassword && (
-              <p className="text-rose-600 text-sm mt-1">{errors.confirmPassword}</p>
+              <p className="text-rose-gold-600 text-sm mt-1">{errors.confirmPassword.message}</p>
             )}
           </div>
 
           {error && (
-            <div className="bg-rose-50 border border-rose-200 rounded-lg p-4">
-              <p className="text-rose-700 text-sm">{error}</p>
+            <div className="bg-rose-gold-50 border border-rose-gold-200 rounded-lg p-4">
+              <p className="text-rose-gold-700 text-sm">{error}</p>
             </div>
           )}
 
@@ -187,7 +187,7 @@ export function RegisterForm({ onToggleMode }: RegisterFormProps) {
             Already have an account?{' '}
             <button
               onClick={onToggleMode}
-              className="text-rose-500 hover:text-rose-600 font-medium transition-colors"
+              className="text-rose-gold-500 hover:text-rose-gold-600 font-medium transition-colors"
             >
               Sign in
             </button>

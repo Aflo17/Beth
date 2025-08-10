@@ -19,7 +19,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-rose-400 to-amber-300 hover:from-amber-300 hover:to-rose-400 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
   }
   
   .btn-secondary {
@@ -27,11 +27,11 @@
   }
   
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-colors bg-white text-gray-900;
+    @apply w-full px-4 py-3 border border-soft-shadow rounded-lg focus:ring-2 focus:ring-rose-gold-500 focus:border-rose-gold-500 transition-colors bg-glossy-white text-warm-bronze-900;
   }
 
   .card-gradient {
-    @apply bg-gradient-to-br from-white to-rose-50 border border-gray-200 hover:border-rose-300 transition-all duration-300;
+    @apply bg-gradient-to-br from-glossy-white to-soft-pink-50 border border-soft-shadow hover:border-rose-gold-300 transition-all duration-300;
   }
 }
 

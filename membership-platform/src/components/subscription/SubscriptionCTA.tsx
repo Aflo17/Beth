@@ -36,21 +36,21 @@ export function SubscriptionCTA() {
 
   return (
     <div className="w-full max-w-2xl mx-auto animate-fade-in-up">
-      <div className="bg-gradient-to-br from-rose-50 to-amber-100 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 border border-rose-200">
+      <div className="bg-gradient-to-br from-soft-pink-50 to-rose-gold-100 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 border border-rose-gold-200">
         <div className="text-center mb-8">
-          <Crown className="mx-auto mb-4 text-rose-500" size={48} />
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <Crown className="mx-auto mb-4 text-rose-gold-500" size={48} />
+          <h2 className="text-3xl font-bold text-warm-bronze-900 mb-4">
             Unlock Premium Content
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-warm-bronze-600 text-lg">
             Get unlimited access to our exclusive fitness video library
           </p>
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/50">
           <div className="text-center mb-6">
-            <div className="text-4xl font-bold text-gray-900">$29</div>
-            <div className="text-gray-600">per month</div>
+            <div className="text-4xl font-bold text-warm-bronze-900">$29</div>
+            <div className="text-warm-bronze-600">per month</div>
           </div>
 
           <ul className="space-y-3 mb-6">
@@ -62,8 +62,8 @@ export function SubscriptionCTA() {
               'Cancel anytime',
             ].map((feature, index) => (
               <li key={index} className="flex items-center">
-                <Check className="text-rose-500 mr-3 flex-shrink-0" size={20} />
-                <span className="text-gray-700">{feature}</span>
+                <Check className="text-rose-gold-500 mr-3 flex-shrink-0" size={20} />
+                <span className="text-warm-bronze-700">{feature}</span>
               </li>
             ))}
           </ul>
@@ -84,7 +84,7 @@ export function SubscriptionCTA() {
           )}
         </button>
 
-        <p className="text-center text-gray-500 text-sm mt-4">
+        <p className="text-center text-warm-bronze-500 text-sm mt-4">
           Secure payment powered by Stripe. Cancel anytime.
         </p>
       </div>
