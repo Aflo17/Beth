@@ -34,6 +34,7 @@ export function AccountControls() {
   return (
     <div className="card-gradient rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
       <h3 className="text-xl font-semibold text-warm-bronze-900 mb-6 flex items-center">
+      </h3>
       <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
         <User className="mr-2" size={24} />
         Account Settings
