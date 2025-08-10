@@ -5,44 +5,37 @@ import { MemberShell } from '@/components/MemberShell';
 export default async function MembersPage() {
   const supabase = createServerClient();
   
-  let session = null;
+  // Get current session
+  const { data: { session } } = await supabase.auth.getSession();
+  
   let user = null;
   let subscription = null;
   let videos = [];
   
-  try {
-    // Get current session
-    const { data: { session: sessionData } } = await supabase.auth.getSession();
-    session = sessionData;
+  if (session?.user) {
+    // Get user profile
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', session.user.id)
+      .single();
     
-    if (session?.user) {
-      // Get user profile
-      const { data: profile } = await supabase
-        .from('profiles')
+    user = profile;
+    
+    if (user) {
+      // Get subscription
+      subscription = await getUserSubscription(user.id);
+      
+      // Get published videos (preview for non-subscribers, full list for subscribers)
+      const { data: videoData } = await supabase
+        .from('videos')
         .select('*')
-        .eq('id', session.user.id)
-        .single();
+        .eq('is_published', true)
+        .order('created_at', { ascending: false })
+        .limit(subscription ? 50 : 3); // Limit preview to 3 videos
       
-      user = profile;
-      
-      if (user) {
-        // Get subscription
-        subscription = await getUserSubscription(user.id);
-        
-        // Get published videos (preview for non-subscribers, full list for subscribers)
-        const { data: videoData } = await supabase
-          .from('videos')
-          .select('*')
-          .eq('is_published', true)
-          .order('created_at', { ascending: false })
-          .limit(subscription ? 50 : 3); // Limit preview to 3 videos
-        
-        videos = videoData || [];
-      }
+      videos = videoData || [];
     }
-  } catch (error) {
-    console.error('Error loading members page:', error);
-    // Continue with empty data
   }
   
   return (

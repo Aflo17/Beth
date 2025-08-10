@@ -15,8 +15,7 @@ export const createServiceClient = () => {
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseUrl || !supabaseServiceKey) {
-    console.warn('Missing Supabase service role credentials');
-    return null;
+    throw new Error('Missing Supabase service role credentials');
   }
 
   return createClient<Database>(supabaseUrl, supabaseServiceKey, {
