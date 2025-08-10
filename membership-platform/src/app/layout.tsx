@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/lib/auth/context';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Premium Fitness Videos - Membership Platform',
@@ -34,7 +32,7 @@ export default function RootLayout({
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
       </head>
-      <body className={inter.className}>
+      <body>
         <AuthProvider>
           <div className="min-h-screen bg-gray-50">
             {children}
