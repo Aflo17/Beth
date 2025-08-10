@@ -1,0 +1,112 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.container h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1c1917;
+  margin-bottom: 1.5rem;
+}
+
+.playerContainer {
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.videoCard {
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.videoCard.preview {
+  opacity: 0.8;
+}
+
+.thumbnail {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #f5f5f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderThumbnail {
+  font-size: 3rem;
+  color: #a8a29e;
+}
+
+.previewOverlay {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(214, 167, 158, 0.9);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1c1917;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.content p {
+  color: #57534e;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.duration {
+  display: inline-block;
+  background: #f5f5f4;
+  color: #44403c;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #57534e;
+}
+
+.empty h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1c1917;
+  margin-bottom: 0.5rem;
+}
