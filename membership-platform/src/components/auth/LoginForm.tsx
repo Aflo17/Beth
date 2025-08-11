@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAuth } from '@/lib/auth/context';
+import { loginSchema, LoginFormData } from '@/lib/validations/auth';
 
 interface LoginFormProps {
   onToggleMode: () => void;
@@ -10,36 +13,18 @@ interface LoginFormProps {
 
 export function LoginForm({ onToggleMode }: LoginFormProps) {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const { signIn, loading, error } = useAuth();
 
-  const validateForm = () => {
-    const newErrors: { email?: string; password?: string } = {};
-    
-    if (!email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-    
-    if (!password) {
-      newErrors.password = 'Password is required';
-    } else if (password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) return;
-    
-    await signIn(email, password);
+  const onSubmit = async (data: LoginFormData) => {
+    await signIn(data.email, data.password);
   };
 
   return (
@@ -50,16 +35,15 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
           <p className="text-warm-bronze-600 mt-2">Sign in to access your premium content</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-warm-bronze-700 mb-2">
               Email Address
             </label>
             <input
+              {...register('email')}
               type="email"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               className="input-field"
               placeholder="Enter your email"
             />
@@ -74,10 +58,9 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
             </label>
             <div className="relative">
               <input
+                {...register('password')}
                 type={showPassword ? 'text' : 'password'}
                 id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 className="input-field pr-12"
                 placeholder="Enter your password"
               />
@@ -102,10 +85,10 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={isSubmitting}
             className="w-full btn-primary py-3 px-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
           >
-            {loading ? (
+            {isSubmitting ? (
               <>
                 <Loader2 className="animate-spin mr-2" size={20} />
                 Signing In...
