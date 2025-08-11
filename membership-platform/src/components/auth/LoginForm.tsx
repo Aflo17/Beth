@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAuth } from '@/lib/auth/context';
-import styles from './LoginForm.module.css';
 
 interface LoginFormProps {
   onToggleMode: () => void;
@@ -44,24 +43,16 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
   };
 
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.card}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Welcome Back</h2>
-          <p className={styles.subtitle}>Sign in to access your premium content</p>
+    <div className="w-full max-w-md mx-auto animate-fade-in-up">
+      <div className="card-gradient rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-warm-bronze-900">Welcome Back</h2>
+          <p className="text-warm-bronze-600 mt-2">Sign in to access your premium content</p>
         </div>
 
-        <form onSubmit={handleSubmit} className={styles.form}>
-          {(!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) && (
-            <div className={styles.demoNotice}>
-              <p className={styles.demoText}>
-                <strong>Demo Mode:</strong> Supabase credentials not configured. Please set up your environment variables to enable full functionality.
-              </p>
-            </div>
-          )}
-          
-          <div className={styles.fieldGroup}>
-            <label htmlFor="email" className={styles.label}>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-warm-bronze-700 mb-2">
               Email Address
             </label>
             <input
@@ -73,51 +64,50 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
               placeholder="Enter your email"
             />
             {errors.email && (
-              <p className={styles.errorMessage}>{errors.email}</p>
+              <p className="text-rose-gold-600 text-sm mt-1">{errors.email.message}</p>
             )}
           </div>
 
-          <div className={styles.fieldGroup}>
-            <label htmlFor="password" className={styles.label}>
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-warm-bronze-700 mb-2">
               Password
             </label>
-            <div className={styles.passwordContainer}>
+            <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input-field"
-                style={{ paddingRight: '3rem' }}
+                className="input-field pr-12"
                 placeholder="Enter your password"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className={styles.passwordToggle}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-warm-bronze-500 hover:text-rose-gold-500 transition-colors"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
             {errors.password && (
-              <p className={styles.errorMessage}>{errors.password}</p>
+              <p className="text-rose-gold-600 text-sm mt-1">{errors.password.message}</p>
             )}
           </div>
 
           {error && (
-            <div className={styles.errorNotice}>
-              <p className={styles.errorText}>{error}</p>
+            <div className="bg-rose-gold-50 border border-rose-gold-200 rounded-lg p-4">
+              <p className="text-rose-gold-700 text-sm">{error}</p>
             </div>
           )}
 
           <button
             type="submit"
             disabled={loading}
-            className={`btn-primary ${styles.submitButton}`}
+            className="w-full btn-primary py-3 px-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
           >
             {loading ? (
               <>
-                <Loader2 className="animate-spin" size={20} style={{ marginRight: '0.5rem' }} />
+                <Loader2 className="animate-spin mr-2" size={20} />
                 Signing In...
               </>
             ) : (
@@ -126,12 +116,12 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
           </button>
         </form>
 
-        <div className={styles.footer}>
-          <p className={styles.footerText}>
+        <div className="mt-6 text-center">
+          <p className="text-warm-bronze-600">
             Don't have an account?{' '}
             <button
               onClick={onToggleMode}
-              className={styles.toggleButton}
+              className="text-rose-gold-500 hover:text-rose-gold-600 font-medium transition-colors"
             >
               Sign up
             </button>

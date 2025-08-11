@@ -31,7 +31,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         .eq('status', 'active')
         .single();
 
-      if (error && error.code !== 'PGRST116' && error.message !== 'Please configure Supabase credentials') {
+      if (error && error.code !== 'PGRST116') {
         console.error('Error fetching subscription:', error);
         return;
       }

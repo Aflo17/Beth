@@ -1,48 +1,91 @@
-import { createServerClient } from '@/lib/supabase-server';
-import { getUserSubscription } from '@/lib/subscription';
-import { MemberShell } from '@/components/MemberShell';
+'use client';
 
-export default async function MembersPage() {
-  const supabase = createServerClient();
-  
-  // Get current session
-  const { data: { session } } = await supabase.auth.getSession();
-  
-  let user = null;
-  let subscription = null;
-  let videos = [];
-  
-  if (session?.user) {
-    // Get user profile
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', session.user.id)
-      .single();
-    
-    user = profile;
-    
-    if (user) {
-      // Get subscription
-      subscription = await getUserSubscription(user.id);
-      
-      // Get published videos (preview for non-subscribers, full list for subscribers)
-      const { data: videoData } = await supabase
-        .from('videos')
-        .select('*')
-        .eq('is_published', true)
-        .order('created_at', { ascending: false })
-        .limit(subscription ? 50 : 3); // Limit preview to 3 videos
-      
-      videos = videoData || [];
-    }
+import { useState } from 'react';
+import { useAuth } from '@/lib/auth/context';
+import { LoginForm } from '@/components/auth/LoginForm';
+import { RegisterForm } from '@/components/auth/RegisterForm';
+import { EmailVerificationNotice } from '@/components/auth/EmailVerificationNotice';
+import { SubscriptionCTA } from '@/components/subscription/SubscriptionCTA';
+import { VideoLibrary } from '@/components/videos/VideoLibrary';
+import { AccountControls } from '@/components/subscription/AccountControls';
+import { Loader2 } from 'lucide-react';
+
+export default function MembersPage() {
+  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
+  const { user, subscription, loading } = useAuth();
+
+  const toggleAuthMode = () => {
+    setAuthMode(authMode === 'login' ? 'register' : 'login');
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+        <div className="text-center">
+          <Loader2 className="animate-spin mx-auto mb-4 text-rose-gold-500" size={48} />
+          <p className="text-warm-bronze-600">Loading...</p>
+        </div>
+      </div>
+    );
   }
-  
+
+  // Not logged in - show auth forms
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+        {authMode === 'login' ? (
+          <LoginForm onToggleMode={toggleAuthMode} />
+        ) : (
+          <RegisterForm onToggleMode={toggleAuthMode} />
+        )}
+      </div>
+    );
+  }
+
+  // Logged in but email not verified
+  if (!user.email_verified) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+        <EmailVerificationNotice />
+      </div>
+    );
+  }
+
+  // Logged in, verified, but no active subscription
+  if (!subscription || subscription.status !== 'active') {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+        <SubscriptionCTA />
+      </div>
+    );
+  }
+
+  // Logged in, verified, with active subscription - show video library
   return (
-    <MemberShell 
-      user={user}
-      subscription={subscription}
-      videos={videos}
-    />
+    <div className="min-h-screen bg-gradient-to-br from-soft-pink-50 to-rose-gold-50">
+      <header className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-soft-shadow">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-warm-bronze-900">
+              Fit With <span className="text-rose-gold-500">Beth</span> - Premium Content
+            </h1>
+            <div className="text-sm text-warm-bronze-600">
+              Welcome back, <span className="font-medium text-rose-gold-600">{user.email}</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-3">
+            <VideoLibrary />
+          </div>
+          <div className="lg:col-span-1">
+            <AccountControls />
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }

@@ -1,183 +1,102 @@
-import Link from 'next/link';
-import { Play, Star, Users, Shield, Crown, CheckCircle } from 'lucide-react';
-import styles from './page.module.css';
+import Image from "next/image";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className={styles.container}>
-      {/* Header */}
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <div className={styles.logo}>
-            <Crown className={styles.logoIcon} />
-            <span className={styles.logoText}>FitWithBeth Premium</span>
-          </div>
-          <nav className={styles.nav}>
-            <Link href="/members" className={styles.navLink}>
-              Member Login
-            </Link>
-          </nav>
-        </div>
-      </header>
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
+          <li className="mb-2 tracking-[-.01em]">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+              src/app/page.tsx
+            </code>
+            .
+          </li>
+          <li className="tracking-[-.01em]">
+            Save and see your changes instantly.
+          </li>
+        </ol>
 
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            Transform Your Fitness Journey
-            <span className={styles.heroAccent}>With Premium Content</span>
-          </h1>
-          <p className={styles.heroDescription}>
-            Access exclusive workout videos, personalized training programs, and expert guidance 
-            from certified fitness professionals. Join thousands who've already transformed their lives.
-          </p>
-          <div className={styles.heroActions}>
-            <Link href="/members" className={styles.ctaButton}>
-              <Play className={styles.buttonIcon} />
-              Start Your Journey
-            </Link>
-            <div className={styles.heroStats}>
-              <div className={styles.stat}>
-                <Users className={styles.statIcon} />
-                <span>1000+ Members</span>
-              </div>
-              <div className={styles.stat}>
-                <Star className={styles.statIcon} />
-                <span>4.9/5 Rating</span>
-              </div>
-            </div>
-          </div>
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </a>
         </div>
-      </section>
-
-      {/* Features Section */}
-      <section className={styles.features}>
-        <div className={styles.sectionContent}>
-          <h2 className={styles.sectionTitle}>Why Choose Our Platform?</h2>
-          <div className={styles.featureGrid}>
-            <div className={styles.featureCard}>
-              <Play className={styles.featureIcon} />
-              <h3>Premium Video Library</h3>
-              <p>Access hundreds of high-quality workout videos with new content added weekly.</p>
-            </div>
-            <div className={styles.featureCard}>
-              <Shield className={styles.featureIcon} />
-              <h3>Secure Streaming</h3>
-              <p>Your content is protected with enterprise-grade security and encrypted streaming.</p>
-            </div>
-            <div className={styles.featureCard}>
-              <Users className={styles.featureIcon} />
-              <h3>Expert Guidance</h3>
-              <p>Learn from certified trainers with years of experience in fitness and nutrition.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className={styles.pricing}>
-        <div className={styles.sectionContent}>
-          <h2 className={styles.sectionTitle}>Simple, Transparent Pricing</h2>
-          <div className={styles.pricingCard}>
-            <div className={styles.pricingHeader}>
-              <Crown className={styles.pricingIcon} />
-              <h3>Premium Membership</h3>
-              <div className={styles.price}>
-                <span className={styles.priceAmount}>$29</span>
-                <span className={styles.pricePeriod}>/month</span>
-              </div>
-            </div>
-            <ul className={styles.featureList}>
-              <li className={styles.featureItem}>
-                <CheckCircle className={styles.checkIcon} />
-                Unlimited access to all videos
-              </li>
-              <li className={styles.featureItem}>
-                <CheckCircle className={styles.checkIcon} />
-                New content added weekly
-              </li>
-              <li className={styles.featureItem}>
-                <CheckCircle className={styles.checkIcon} />
-                HD streaming quality
-              </li>
-              <li className={styles.featureItem}>
-                <CheckCircle className={styles.checkIcon} />
-                Mobile and desktop access
-              </li>
-              <li className={styles.featureItem}>
-                <CheckCircle className={styles.checkIcon} />
-                Cancel anytime
-              </li>
-            </ul>
-            <Link href="/members" className={styles.pricingButton}>
-              Get Started Now
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className={styles.testimonials}>
-        <div className={styles.sectionContent}>
-          <h2 className={styles.sectionTitle}>What Our Members Say</h2>
-          <div className={styles.testimonialGrid}>
-            <div className={styles.testimonialCard}>
-              <div className={styles.stars}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={styles.starIcon} />
-                ))}
-              </div>
-              <p>"The video quality is amazing and the workouts are so effective. I've seen incredible results in just 3 months!"</p>
-              <div className={styles.testimonialAuthor}>- Sarah M.</div>
-            </div>
-            <div className={styles.testimonialCard}>
-              <div className={styles.stars}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={styles.starIcon} />
-                ))}
-              </div>
-              <p>"Finally found a platform that keeps me motivated. The variety of workouts means I never get bored."</p>
-              <div className={styles.testimonialAuthor}>- Mike R.</div>
-            </div>
-            <div className={styles.testimonialCard}>
-              <div className={styles.stars}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={styles.starIcon} />
-                ))}
-              </div>
-              <p>"Professional quality content at an affordable price. Best investment I've made for my health."</p>
-              <div className={styles.testimonialAuthor}>- Jessica L.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className={styles.cta}>
-        <div className={styles.ctaContent}>
-          <h2 className={styles.ctaTitle}>Ready to Transform Your Fitness?</h2>
-          <p className={styles.ctaDescription}>
-            Join thousands of members who are already seeing amazing results. Start your journey today!
-          </p>
-          <Link href="/members" className={styles.ctaButton}>
-            <Play className={styles.buttonIcon} />
-            Start Free Trial
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <div className={styles.footerLogo}>
-            <Crown className={styles.logoIcon} />
-            <span className={styles.logoText}>FitWithBeth Premium</span>
-          </div>
-          <div className={styles.footerLinks}>
-            <Link href="/members" className={styles.footerLink}>Members</Link>
-            <span className={styles.footerText}>© 2025 FitWithBeth Premium. All rights reserved.</span>
-          </div>
-        </div>
+      </main>
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
       </footer>
     </div>
   );
