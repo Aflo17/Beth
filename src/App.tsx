@@ -117,7 +117,7 @@ function App() {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'programs', 'about', 'transformations', 'members', 'contact'];
+      const sections = ['home', 'programs', 'about', 'transformations', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -262,7 +262,7 @@ function App() {
           </div>
           
           <div className="hidden md:flex space-x-8">
-            {['home', 'programs', 'about', 'transformations', 'members', 'contact'].map((section) => (
+            {['home', 'programs', 'about', 'transformations', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -270,16 +270,16 @@ function App() {
                   activeSection === section ? 'text-rose-gold-500' : 'text-warm-bronze-700 hover:text-rose-gold-500'
                 }`}
               >
-                {section === 'transformations' ? 'Results' : section === 'members' ? 'Members' : section}
+                {section === 'transformations' ? 'Results' : section}
               </button>
             ))}
           </div>
 
           <button 
-            onClick={() => window.open('/membership-platform/members', '_blank')}
+            onClick={() => scrollToSection('contact')}
             className="bg-rose-gold-500 hover:bg-soft-pink-500 text-white px-3 py-2 sm:px-6 sm:py-2 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base"
           >
-            Member Login
+            Get Started
           </button>
         </div>
       </nav>
@@ -306,10 +306,10 @@ function App() {
           </p>
           
           <button 
-            onClick={() => window.open('/membership-platform/members', '_blank')}
+            onClick={() => scrollToSection('programs')}
             className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
           >
-            JOIN NOW
+            START YOUR JOURNEY
           </button>
         </div>
 
@@ -377,66 +377,13 @@ function App() {
                 </ul>
 
                 <button 
-                  onClick={() => window.open('/membership-platform/members', '_blank')}
+                  onClick={() => scrollToSection('contact')}
                   className="w-full bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base mt-auto"
                 >
-                  Join Now
+                  Get Started
                 </button>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Members Section */}
-      <section id="members" className="py-12 sm:py-20 bg-gradient-to-br from-warm-bronze-900 to-rose-gold-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-5xl font-black mb-6 sm:mb-8 text-white">
-            EXCLUSIVE <span className="text-rose-gold-300">MEMBER ACCESS</span>
-          </h2>
-          
-          <p className="text-lg sm:text-xl text-soft-pink-100 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join our exclusive membership platform to access premium workout videos, personalized training programs, and direct coaching support.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto mb-12">
-            {[
-              {
-                title: "Premium Video Library",
-                description: "Access hundreds of exclusive workout videos with new content added weekly"
-              },
-              {
-                title: "Personalized Programs",
-                description: "Custom training plans designed specifically for your goals and fitness level"
-              },
-              {
-                title: "Direct Coach Support",
-                description: "Get answers to your questions and guidance from Beth personally"
-              }
-            ].map((benefit, index) => (
-              <div 
-                key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
-              >
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-soft-pink-100 text-sm sm:text-base">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
-            <button 
-              onClick={() => window.open('/membership-platform/members', '_blank')}
-              className="w-full sm:w-auto bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
-            >
-              START MEMBERSHIP
-            </button>
-            <button 
-              onClick={() => window.open('/membership-platform/members', '_blank')}
-              className="w-full sm:w-auto bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105"
-            >
-              MEMBER LOGIN
-            </button>
           </div>
         </div>
       </section>
@@ -585,11 +532,11 @@ function App() {
                     <button 
                       onClick={() => {
                         setIsReviewsModalOpen(false);
-                        window.open('/membership-platform/members', '_blank');
+                        scrollToSection('contact');
                       }}
                       className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
-                      Join Membership
+                      Get Started Today
                     </button>
                   </div>
                 </div>

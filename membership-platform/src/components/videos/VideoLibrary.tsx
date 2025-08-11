@@ -44,8 +44,8 @@ export function VideoLibrary() {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="text-center">
-          <Loader2 className="animate-spin mx-auto mb-4 text-rose-gold-500" size={48} />
-          <p className="text-warm-bronze-600">Loading videos...</p>
+          <Loader2 className="animate-spin mx-auto mb-4 text-blue-600" size={48} />
+          <p className="text-gray-600">Loading videos...</p>
         </div>
       </div>
     );
@@ -53,11 +53,11 @@ export function VideoLibrary() {
 
   if (error) {
     return (
-      <div className="bg-rose-gold-50 border border-rose-gold-200 rounded-lg p-6">
-        <p className="text-rose-gold-700">{error}</p>
+      <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+        <p className="text-red-700">{error}</p>
         <button
           onClick={fetchVideos}
-          className="mt-4 btn-primary px-4 py-2"
+          className="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
         >
           Try Again
         </button>
@@ -68,9 +68,9 @@ export function VideoLibrary() {
   if (videos.length === 0) {
     return (
       <div className="text-center py-12">
-        <Play className="mx-auto mb-4 text-warm-bronze-400" size={48} />
-        <h3 className="text-xl font-semibold text-warm-bronze-900 mb-2">No Videos Available</h3>
-        <p className="text-warm-bronze-600">Check back soon for new content!</p>
+        <Play className="mx-auto mb-4 text-gray-400" size={48} />
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">No Videos Available</h3>
+        <p className="text-gray-600">Check back soon for new content!</p>
       </div>
     );
   }
@@ -78,7 +78,7 @@ export function VideoLibrary() {
   return (
     <div className="space-y-8">
       {selectedVideo && (
-        <div className="card-gradient rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <VideoPlayer
             video={selectedVideo}
             onClose={() => setSelectedVideo(null)}
@@ -87,7 +87,7 @@ export function VideoLibrary() {
       )}
 
       <div>
-        <h2 className="text-2xl font-bold text-warm-bronze-900 mb-6">Video Library</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Video Library</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {videos.map((video) => (
             <VideoCard

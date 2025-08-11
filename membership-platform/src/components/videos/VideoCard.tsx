@@ -17,7 +17,7 @@ export function VideoCard({ video, onPlay }: VideoCardProps) {
   };
 
   return (
-    <div className="card-gradient rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group transform hover:-translate-y-1">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
       <div className="relative aspect-video bg-gray-900">
         {video.thumbnail_url ? (
           <img
@@ -27,16 +27,16 @@ export function VideoCard({ video, onPlay }: VideoCardProps) {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <Play className="text-warm-bronze-400" size={48} />
+            <Play className="text-gray-400" size={48} />
           </div>
         )}
         
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-200 flex items-center justify-center">
           <button
             onClick={onPlay}
-            className="opacity-0 group-hover:opacity-100 transition-all duration-200 bg-rose-gold-500 hover:bg-rose-gold-600 text-white rounded-full p-4 transform hover:scale-110 shadow-lg"
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-4 transform hover:scale-110 transition-transform"
           >
-            <Play className="text-white ml-1" size={24} />
+            <Play className="text-gray-900 ml-1" size={24} />
           </button>
         </div>
 
@@ -49,11 +49,11 @@ export function VideoCard({ video, onPlay }: VideoCardProps) {
       </div>
 
       <div className="p-4">
-        <h3 className="font-semibold text-warm-bronze-900 mb-2 line-clamp-2">
+        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
           {video.title}
         </h3>
         {video.description && (
-          <p className="text-warm-bronze-600 text-sm line-clamp-3">
+          <p className="text-gray-600 text-sm line-clamp-3">
             {video.description}
           </p>
         )}
