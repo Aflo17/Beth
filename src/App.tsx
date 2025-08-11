@@ -276,7 +276,7 @@ function App() {
           </div>
 
           <button 
-            onClick={() => window.open('/membership-platform/members', '_blank')}
+            onClick={() => window.open('http://localhost:3000/members', '_blank')}
             className="bg-rose-gold-500 hover:bg-soft-pink-500 text-white px-3 py-2 sm:px-6 sm:py-2 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base"
           >
             Member Login
@@ -306,7 +306,7 @@ function App() {
           </p>
           
           <button 
-            onClick={() => window.open('/membership-platform/members', '_blank')}
+            onClick={() => window.open('http://localhost:3000/members', '_blank')}
             className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
           >
             JOIN NOW
@@ -377,7 +377,7 @@ function App() {
                 </ul>
 
                 <button 
-                  onClick={() => window.open('/membership-platform/members', '_blank')}
+                  onClick={() => window.open('http://localhost:3000/members', '_blank')}
                   className="w-full bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base mt-auto"
                 >
                   Join Now
@@ -426,13 +426,13 @@ function App() {
 
           <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
             <button 
-              onClick={() => window.open('/membership-platform/members', '_blank')}
+              onClick={() => window.open('http://localhost:3000/members', '_blank')}
               className="w-full sm:w-auto bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
             >
               START MEMBERSHIP
             </button>
             <button 
-              onClick={() => window.open('/membership-platform/members', '_blank')}
+              onClick={() => window.open('http://localhost:3000/members', '_blank')}
               className="w-full sm:w-auto bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105"
             >
               MEMBER LOGIN
@@ -583,10 +583,7 @@ function App() {
                       Start your transformation journey today with a free assessment.
                     </p>
                     <button 
-                      onClick={() => {
-                        setIsReviewsModalOpen(false);
-                        window.open('/membership-platform/members', '_blank');
-                      }}
+                      onClick={() => window.open('http://localhost:3000/members', '_blank')}
                       className="bg-gradient-to-r from-rose-gold-500 to-soft-pink-500 hover:from-soft-pink-500 hover:to-rose-gold-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                       Join Membership
