@@ -12,7 +12,7 @@ A modern, responsive website for elite personal training services built with Rea
 
 ## 🚀 Live Demo
 
-Visit the live site: [https://lucky-baklava-9d3ffd.netlify.app](https://lucky-baklava-9d3ffd.netlify.app)
+Visit the live site: [[https://lucky-baklava-9d3ffd.netlify.app](https://fitwithbeth.com/)
 
 ## 🛠️ Tech Stack
 
